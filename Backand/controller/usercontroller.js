@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken')
 
 exports.register=async(req,res)=>{
     try{
-        //send de data objet mil user
+       
         
 const {name,email,password}=req.body
 // user email unique 

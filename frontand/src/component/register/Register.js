@@ -5,6 +5,7 @@ import {useState}from 'react'
 
 
 
+
 const Register = () => {
 
   
@@ -29,19 +30,25 @@ const login = async(value)=> {
     <form className="form">
   <p className="title">Register </p>
   <p className="message">Signup now and get full access to our app. </p>
-  <div className="flex" onClick="onClick" >
+  <div className="flex"  >
     <label>
-      <input required="" placeholder="" type="text" className="input" />
+      <input required="" placeholder="" type="text" className="input" 
+      value ={UserName}  onChange={(e)=>setUserName(e.target.value)}
+      />
       <span>name</span>
     </label>
   
   </div>
   <label>
-    <input required="" placeholder="email" type="email" className="input" />
+    <input required="" placeholder="email" type="email" className="input" 
+     value ={email}  onChange={(e)=>setEmail(e.target.value)}
+    />
     <span>Email</span>
   </label>
   <label>
-    <input required="" placeholder="password" type="password" className="input" />
+    <input required="" placeholder="password" type="password" className="input"
+    value ={password}  onChange={(e)=>setPassword(e.target.value)}
+    />
     <span>Password</span>
   </label>
   <label>
