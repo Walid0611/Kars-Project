@@ -1,12 +1,19 @@
 import React from 'react'
-import './navbar.css'
-import { Link } from 'react-router-dom';
+import './user.css'
+import { Link } from 'react-router-dom'
 
 
-const Navbar = (auth, logout,) => {
+
+
+
+
+
+
+
+const User = ({auth }) => {
   return (
-    <div className='navMenu'>
-      <span>{auth.name}</span>
+     <div className='navMenu'>
+      <span>{auth}</span>
       
       <nav className='navbar '>
        <a href='/Home'>home</a>
@@ -28,7 +35,9 @@ const Navbar = (auth, logout,) => {
 
       
     </div>
+   
+
   )
 }
 
-export default Navbar
+export default User

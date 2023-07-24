@@ -13,7 +13,7 @@ import axios from 'axios'
 
  export const fetchAuthUser = async()=>{
     const token = localStorage.getItem('token')
-    const {data} = await axios.get('http://localhost:3002/auth/moncompte', {headers:{Authorization:token}})
+    const {data} = await axios.get('http://localhost:3002/auth/all', {headers:{Authorization:token}})
     return data
 }
  

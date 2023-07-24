@@ -52,10 +52,7 @@ navigate('/app/PrivateRoute');
     />
     <span>Password</span>
   </label>
-  <label>
-    <input required="" placeholder="" type="password" className="input" />
-    <span>Confirm password</span>
-  </label>
+  
   <button className="submit" type='button'  onClick={()=>handleLogin({email,password})} >Submit</button>
   <p className="sign in">
     Already have an account ? <a href="Sign">Sign in</a>{" "}

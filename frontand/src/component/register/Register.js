@@ -1,29 +1,33 @@
 import React from 'react'
 import './register.css'
 import {useNavigate , } from 'react-router-dom'
-import {useState}from 'react'
+import {useState , useEffect}from 'react'
+import { postAuthUser } from '../../api/authapi'
 
 
 
 
 const Register = () => {
+  const [UserName, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  
-const [UserName,setUserName]=useState('')
-const [email,setEmail]=useState('')
-const [password,setPassword]=useState('')
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/app/PrivateRoute');
+    }
+  }, [navigate]);
 
-
-    
-const navigate = useNavigate()
-const login = async(value)=> {
-  try{
-  await  (value)
-    navigate ('/login')
-  } catch (err) {
-    console.log(err)
-  }
-}
+  const register = async () => {
+    try {
+      await postAuthUser({ UserName, email, password });
+      navigate('/login');
+    } catch (error) {
+      console.log('register', error);
+    }
+  };
 
   return (
     <div>
@@ -51,11 +55,11 @@ const login = async(value)=> {
     />
     <span>Password</span>
   </label>
-  <label>
-    <input required="" placeholder="" type="password" className="input" />
-    <span>Confirm password</span>
-  </label>
-  <button className="submit">Submit</button>
+  
+  <button className="submit" onClick={register}>
+  Submit
+</button>
+
   <p className="sign in">
     Already have an account ? <a href="Sign">Sign in</a>{" "}
   </p>

@@ -2,7 +2,7 @@ const express = require('express')
 
 const contactRouter = express.Router()
 
-const ContactSchema= require('../model/Contact')
+const ContactSchema= require('../model/Booking')
 
 
 contactRouter.get('/getuser',async(req,res)=>{
