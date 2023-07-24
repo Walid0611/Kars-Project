@@ -5,6 +5,8 @@ import Navbar from './component/navbar/Navbar';
 import Privateroute from './component/PrivateRoute/PrivateRoute';
 import Home from './component/Home/Home'
 import { Routes, Route } from 'react-router-dom';
+import ListUser from './component/Admin/ListUsers/ListUser';
+import AddCars from './component/AddCars/AddCars';
 
 function App() {
   return (
@@ -18,7 +20,17 @@ function App() {
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/" element={<Home/>}/>
         <Route path="/app/PrivateRoute" element={<Privateroute />} />
-      </Routes>
+      
+      
+        <Route path='/listUser' element={<ListUser/>}/>
+        <Route path='/admin/AddCars' element={<AddCars/>}/>
+        
+      
+      
+      
+      
+      
+        </Routes>
       
     </div>
     
