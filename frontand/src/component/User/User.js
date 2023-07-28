@@ -14,17 +14,17 @@ const User = ({auth }) => {
   return (
      <div className='navMenu'>
       <span>{auth}</span>
-      
-      <nav className='navbar '>
+
+      <nav className='navbar'>
        <Link to='/KarsList'>home</Link>
-      
+
        <a href='/contact'>contact</a>
       </nav>
       <div id="login-btn" >
       <i className='far fa-user'></i>
-      
+
       </div>
-      
+
 
 <div>
 
@@ -33,9 +33,9 @@ const User = ({auth }) => {
 
 </div>
 
-      
+
     </div>
-   
+
 
   )
 }

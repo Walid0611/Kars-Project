@@ -13,29 +13,29 @@ function App() {
   return (
     <div className='App' >
     <h1>Great Deal</h1>
-    
+
       <Routes>
-      
-        <Route path="/register" element={<Register />} />
+
+        <Route path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/KarsList" element={<Home/>}/>
         <Route path="/app/PrivateRoute" element={<Privateroute />} />
-      
-      
+
+
         <Route path='/listUser' element={<ListUser/>}/>
         <Route path='/Admin/AddCars' element={<AddCars/>}/>
         <Route path='/KarsList' element={<KarsList/>}/>
 
-      
-      
-      
-      
-      
+
+
+
+
+
         </Routes>
-      
+
     </div>
-    
+
   );
 }
 

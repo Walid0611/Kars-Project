@@ -1,4 +1,5 @@
 import React from 'react'
+import ListUser from './../Admin/ListUsers/ListUser';
 
 const ProfileUser = (auth) => {
   return (
@@ -7,7 +8,7 @@ const ProfileUser = (auth) => {
       <h1>Profile</h1>
       {auth && (
         <div>
-          <p>List: {auth.KarsList}</p>
+          <p>ListUser: {auth.KarsList}</p>
           {/* other details */}
         </div>
       )}
