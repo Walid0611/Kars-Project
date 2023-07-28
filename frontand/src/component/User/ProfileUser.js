@@ -7,7 +7,7 @@ const ProfileUser = (auth) => {
       <h1>Profile</h1>
       {auth && (
         <div>
-          <p>Username: {auth.UserName}</p>
+          <p>List: {auth.KarsList}</p>
           {/* other details */}
         </div>
       )}

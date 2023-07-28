@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './../navbar/Navbar';
-
 import KarsList from '../Kars/KarsList';
 
 
