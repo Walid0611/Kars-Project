@@ -10,7 +10,7 @@ console.log('mini',mini)
 
 
   return (
-    <div className='bodyCardMovie'>
+    <div className='bodyCardCards'>
   <div className="background" />
   <div className="background-texture" />
   <section className="carousel">
@@ -18,11 +18,11 @@ console.log('mini',mini)
     
     <div className="carousel__container">
       <div className="carousel-item">
-      <span>name:{mini.name}</span>
+      <span>{mini.name}</span>
         <img
           className="carousel-item__img"
           src={mini.image}
-          alt="many"
+          alt="cars"
         />
         
         <div className="carousel-item__details">

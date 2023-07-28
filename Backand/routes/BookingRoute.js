@@ -9,7 +9,7 @@ BookingRouter.get('/getAll', BookingControl.getAllBookings);
 BookingRouter.post('/addBooking', BookingControl.addBooking);
 //http://localhost:3002/booking/addbooking
 BookingRouter.put('/updatedBooking/:id', BookingControl.updateBookingById);
-//http://localhost:3002/booking/UpBooking:id
+//http://localhost:3002/booking/updatedBooking:id
 BookingRouter.delete('/deleteBooking/:id', BookingControl.deleteBooking);
 //http://localhost:3002/booking/deleteBooking:id
 
