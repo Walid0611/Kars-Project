@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import CardUsers from './CardUsers';
-import { fetchAllUsers,deleteUser } from '../../../Api/UserListApi';
+import { fetchAllUsers,deleteUser } from '../../../api/UserListApi';
 import { useDispatch, useSelector } from 'react-redux';
 import { setListUser } from '../../../store/ListUserSlice';
 

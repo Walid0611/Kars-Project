@@ -9,7 +9,7 @@ const Navbar = (auth, logout,) => {
       <span>{auth.name}</span>
       
       <nav className='navbar '>
-       <a href='/Home'>home</a>
+       <Link to='/KarsList'>home</Link>
       
        <a href='/contact'>contact</a>
       </nav>

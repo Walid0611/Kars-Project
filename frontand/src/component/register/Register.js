@@ -3,31 +3,30 @@ import './register.css'
 import {useNavigate , } from 'react-router-dom'
 import {useState , useEffect}from 'react'
 import { postAuthUser } from '../../api/authapi'
-
-
+import Login from './../login/Login';
 
 
 const Register = () => {
-  const [UserName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      navigate('/app/PrivateRoute');
-    }
-  }, [navigate]);
 
-  const register = async () => {
-    try {
-      await postAuthUser({ UserName, email, password });
-      navigate('/login');
-    } catch (error) {
-      console.log('register', error);
-    }
-  };
+
+const [UserName,setUserName]=useState('')
+const [email,setEmail]=useState('')
+const [password,setPassword]=useState('')
+
+
+   
+const navigate = useNavigate()
+const login = async(value)=> {
+  try{
+  await postAuthUser (value)
+    navigate ('/login')
+  } catch (err) {
+    console.log('register',Register)
+  }
+}
+
+
 
   return (
     <div>
@@ -56,7 +55,9 @@ const Register = () => {
     <span>Password</span>
   </label>
   
-  <button className="submit" onClick={register}>
+  <button className="btn"
+  type='button'
+  onClick={()=>login({UserName,email,password})} >
   Submit
 </button>
 

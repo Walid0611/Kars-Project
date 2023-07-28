@@ -7,6 +7,7 @@ import Home from './component/Home/Home'
 import { Routes, Route } from 'react-router-dom';
 import ListUser from './component/Admin/ListUsers/ListUser';
 import AddCars from './component/AddCars/AddCars';
+import KarsList from './component/Kars/KarsList';
 
 function App() {
   return (
@@ -18,13 +19,14 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/navbar" element={<Navbar />} />
-        <Route path="/" element={<Home/>}/>
+        <Route path="/KarsList" element={<Home/>}/>
         <Route path="/app/PrivateRoute" element={<Privateroute />} />
       
       
         <Route path='/listUser' element={<ListUser/>}/>
-        <Route path='/admin/AddCars' element={<AddCars/>}/>
-        
+        <Route path='/Admin/AddCars' element={<AddCars/>}/>
+        <Route path='/KarsList' element={<KarsList/>}/>
+
       
       
       

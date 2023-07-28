@@ -23,7 +23,7 @@ userRoutes.post('/login',logvalidation,validation,login)
 userRoutes.put('/update/:id',isAuth,userUpdate)
 
 
-userRoutes.get('account',isAuth,(req,res)=>{
+userRoutes.get('/account',isAuth,(req,res)=>{
     res.send(req.user)
 
 })

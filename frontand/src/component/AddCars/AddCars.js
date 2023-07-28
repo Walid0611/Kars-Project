@@ -1,7 +1,7 @@
 import React,  {useState} from 'react'
 import './AddCars.css'
 import {useNavigate} from 'react-router-dom';
-import {PostCars} from '../../Api/AuthCars'
+import {PostCars} from '../../api/AuthCars'
 
 
 
@@ -22,7 +22,7 @@ const AddCars = () => {
   navigate('/')
  }
   
-  
+  console.log("ija",AddCars)
   
   
   
@@ -68,7 +68,7 @@ const AddCars = () => {
           <input
             id="email"
             className="input-text js-input"
-            type="image"
+            type="image" alt='my space'
             required=""   value={image} onChange={(e)=>setImage(e.target.value)}/>
           <label className="label" htmlFor="image">
             Image

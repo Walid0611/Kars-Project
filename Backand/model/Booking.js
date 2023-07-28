@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const ContactSchema = mongoose.Schema({
+const bookingSchema = mongoose.Schema({
 
     name: {
         type:String,
@@ -15,7 +15,7 @@ categories:{
     required:true,
 },
 model:{
-    type: String,
+    type: Number,
     required:true
 },
 Image:String
@@ -27,4 +27,4 @@ Image:String
 
 })
 
-module.exports = mongoose.model('walid',ContactSchema)
+module.exports = mongoose.model('walid',bookingSchema)

@@ -16,7 +16,7 @@ const User = ({auth }) => {
       <span>{auth}</span>
       
       <nav className='navbar '>
-       <a href='/Home'>home</a>
+       <Link to='/KarsList'>home</Link>
       
        <a href='/contact'>contact</a>
       </nav>

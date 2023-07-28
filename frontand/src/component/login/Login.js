@@ -36,9 +36,9 @@ navigate('/app/PrivateRoute');
     <div>
     <div>
     <form className="form">
-  <p className="title">Register </p>
+  <p className="title">Login </p>
   <p className="message">Signup now and get full access to our app. </p>
-  <div className="flex" onClick="onClick" >
+  <div className="flex" >
   </div>
   <label>
     <input required="" placeholder="email" type="email" className="input"
