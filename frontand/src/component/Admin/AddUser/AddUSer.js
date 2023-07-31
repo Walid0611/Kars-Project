@@ -6,8 +6,10 @@ import { useNavigate } from 'react-router';
 
 const AddUser = () => {
 const [name,setName]=useState('')
-const [email,setEmail]=useState('')
-const [age,setAge]=useState(0)
+  const [series,setSeries]=useState('')
+  const [ categories,setCategories]=useState('')
+  const [image,setImage]=useState('')
+  const [model,setModel]=useState('')
 const navigate = useNavigate()
 const handelAdd=async(values)=>{
  await PostCars(values)
@@ -26,21 +28,21 @@ const handelAdd=async(values)=>{
   </div>
   <div>
     <label class="label-email">
-      <input type="email" class="text" name="age" placeholder="age" tabindex="1" required   value={age} 
-      onChange={(e)=>setAge(e.target.value)} />
-      <span class="required">Age</span>
+      <input type="email" class="text" name="age" placeholder="age" tabindex="1" required   value={categories} 
+      onChange={(e)=>setCategories(e.target.value)} />
+      <span class="required">categories</span>
     </label>
   </div>
   
   <div>
     <label class="label-password">
-      <input type="text" class="text" name="Email" placeholder="Email" tabindex="2" required  value={email} 
-      onChange={(e)=>setEmail(e.target.value)}  />
-      <span class="required">Email</span>
+      <input type="text" class="text" name="Email" placeholder="Email" tabindex="2" required  value={series} 
+      onChange={(e)=>setSeries(e.target.value)}  />
+      <span class="required">series</span>
     </label>
   </div>
   <div class="email">
-    <a><button onClick={()=>handelAdd({name,age,email})} >Add New User</button></a>
+    <a><button onClick={()=>handelAdd({name,categories,series})} >Add New User</button></a>
   </div>
 
 </form></div></div>

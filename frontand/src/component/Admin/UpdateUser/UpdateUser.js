@@ -5,8 +5,9 @@ import { useNavigate,useParams } from 'react-router';
 
 const UpdateUser = () => {
   const [name,setName]=useState('')
-const [email,setEmail]=useState('')
-const [age,setAge]=useState(0)
+const [categories,setEmail]=useState('')
+const [series,setSeries]=useState(0)
+
 const navigate = useNavigate()
 const {id}=useParams()
 const handelUpdate=async(icon,values)=>{
@@ -20,8 +21,8 @@ const data = await getUniqueUser(UserId)
 console.log("data unique",data.getUniqueUser
 )
 setName(data.getUniqueUser.name)
-setAge(data.getUniqueUser.age)
-setEmail(data.getUniqueUser.email)
+setSeries(data.getUniqueUser.series)
+setcategories(data.getUniqueUser.categories)
 
 
 }

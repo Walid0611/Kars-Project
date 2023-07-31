@@ -32,6 +32,7 @@ const updateuser = await  bookingSchema.findByIdAndUpdate(id,{$set:{...req.body}
 res.status(200).json({msg:"you could update me",updateuser})
     }catch(err){
         console.log(err)
+        res.send("theres a problem")
     }
 })
 
