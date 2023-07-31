@@ -13,3 +13,9 @@ export const  deleteUser=async(id)=>{
     const deleteUser = await axios.delete(`http://localhost:3002/auth/deleteUser/${id}`);
 
 }
+
+//===> //http://localhost:3002/auth/UpdateUser
+export const  UpdateUser=async(id)=>{
+    const UpdateUser = await axios.put(`http://localhost:3002/auth/UpdateUser/${id}`);
+
+}
