@@ -15,7 +15,7 @@ export const  deleteUser=async(id)=>{
 }
 
 //===> //http://localhost:3002/auth/UpdateUser
-export const  UpdateUser=async(id)=>{
-    const UpdateUser = await axios.put(`http://localhost:3002/auth/UpdateUser/${id}`);
+export const  UpdateUser=async(id,values)=>{
+    const UpdateUser = await axios.put(`http://localhost:3002/auth/UpdateUser/${id},value`);
 
 }

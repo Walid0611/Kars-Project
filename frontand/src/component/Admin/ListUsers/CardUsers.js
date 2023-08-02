@@ -1,9 +1,14 @@
 import React from 'react';
 import './CardUser.css';
+import { useNavigate } from 'react-router';
 
 const CardUsers = ({ miniUser,getAllUser ,deleteUser}) => {
   console.log('user from the backend', miniUser);
 
+  let navigate=useNavigate();
+  const navigateUSer =()=>{
+    navigate('/update/${miniUser._id}')
+  }
 
   const handleDelete = () => {
 
@@ -27,6 +32,7 @@ const CardUsers = ({ miniUser,getAllUser ,deleteUser}) => {
                       <th>
                         <span>Created</span>
                       </th>
+                      <button onClick={()=>navigateUSer()}>modify</button>
                       <th className="text-center">
                         <span>Status</span>
                       </th>
@@ -53,7 +59,7 @@ const CardUsers = ({ miniUser,getAllUser ,deleteUser}) => {
                         <span className="label label-default">Inactive</span>
                       </td>
                       <td>
-                        <a href="#s">{miniUser.email}</a>
+                        <a href="#s">{miniUser.categories}</a>
                       </td>
                       <td style={{ width: '20%' }}>
                         <a href="#s" className="table-link">

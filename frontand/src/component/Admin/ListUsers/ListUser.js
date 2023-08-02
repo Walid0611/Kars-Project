@@ -4,6 +4,7 @@ import { fetchAllUsers,deleteUser } from '../../../api/UserListApi';
 import { useDispatch, useSelector } from 'react-redux';
 import { setListUser } from '../../../store/ListUserSlice';
 
+
 const ListUser = () => {
  
   const Users = useSelector((state) => state.UserElement);
@@ -38,7 +39,7 @@ const dispatch = useDispatch();
 
   return (
     <div>
-      {Users.map((e) => ( <CardUsers  miniUser={e}  getAllUser={getAllUser}     deleteUser={deleteUser}  />
+      {Users.map((e) => ( <CardUsers  miniUser={e}  getAllUser={getAllUser}  deleteUser={deleteUser}  />
       ))}
     </div>
   );

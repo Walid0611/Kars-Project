@@ -5,7 +5,7 @@ const connectdb = require('./config/conecteddb')
 require ('dotenv').config()
 
 
-const port = process.env.PORT  || 3002
+const port =  3002
 
 //import routes
 const userRoute = require('./routes/routeuser')

@@ -3,15 +3,15 @@ import "./UpdateUser.css"
 import {UpdateUser,getUniqueUser} from '../../../api/UserListApi'
 import { useNavigate,useParams } from 'react-router';
 
-const UpdateUser = () => {
-  const [name,setName]=useState('')
-const [categories,setEmail]=useState('')
+const UpdateUsers = () => {
+const [name,setName]=useState('')
+const [categories,setCategories]=useState('')
 const [series,setSeries]=useState(0)
 
 const navigate = useNavigate()
 const {id}=useParams()
 const handelUpdate=async(icon,values)=>{
-await UpdateUser(icon,values)
+await UpdateUsers(icon,values)
 navigate('/list')
 }
 
@@ -22,7 +22,7 @@ console.log("data unique",data.getUniqueUser
 )
 setName(data.getUniqueUser.name)
 setSeries(data.getUniqueUser.series)
-setcategories(data.getUniqueUser.categories)
+setCategories(data.getUniqueUser.categories)
 
 
 }
@@ -42,21 +42,22 @@ if(id){getUniqueId(id)}
   </div>
   <div>
     <label class="label-email">
-      <input type="email" class="text" name="age" placeholder="age" tabindex="1" required   value={age} 
-      onChange={(e)=>setAge(e.target.value)} />
-      <span class="required">Age</span>
+      <input type="text" class="text" name="categories" placeholder="categories" tabindex="1" required   value={categories} 
+      onChange={(e)=>setCategories(e.target.value)} />
+      <span class="required">categories</span>
     </label>
   </div>
   
   <div>
     <label class="label-password">
-      <input type="text" class="text" name="Email" placeholder="Email" tabindex="2" required  value={email} 
-      onChange={(e)=>setEmail(e.target.value)}  />
-      <span class="required">Email</span>
+      <input type="text" class="text" name="series" placeholder="series" tabindex="2" required  value={      <span class="required">series</span>
+} 
+      onChange={(e)=>setSeries(e.target.value)}  />
+      <span class="required">series</span>
     </label>
   </div>
   <div class="email">
-    <a><button onClick={()=>handelUpdate(id,{name,age,email})} >Add New Kars</button></a>
+    <a><button onClick={()=>handelUpdate(id,{name,categories,series})} >Add New Kars</button></a>
   </div>
 
 </form></div></div>
