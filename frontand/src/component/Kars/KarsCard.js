@@ -1,8 +1,9 @@
 import React from 'react'
 import './KarsCard.css'
 import {useNavigate} from 'react-router'
+import deleteUser from '../../api/UserListApi'
 
-const KarsCard = ({Kars,mini,getAllKars}) => {
+const KarsCard = ({mini,getAllKars}) => {
 
 console.log('mini',mini)
 
@@ -19,7 +20,7 @@ navigate(`/update/${mini._id}`)
   <section className="carousel">
     <h2 className="categories__title">All KArs</h2>
     <button onClick={()=>navigateKars()} >modify</button>
-    <button>X</button>
+    <button onClick={async()=>{await (mini._id); getAllKars()}}>X</button>
     
     <div className="carousel__container">
       <div className="carousel-item">

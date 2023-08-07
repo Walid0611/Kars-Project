@@ -12,8 +12,9 @@ const [series,setSeries]=useState(0)
 
 const navigate = useNavigate();
 const {id}=useParams()
-const handelUpdate=async(icon,values)=>{
-await UpdateKars(icon,values)
+console.log('ici',id)
+const handelUpdate=async(idcon,values)=>{
+await UpdateKars(idcon,values)
 navigate('/list')
 }
 
