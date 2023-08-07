@@ -1,6 +1,6 @@
 import React from 'react'
 import './navbar.css'
-import { Link } from 'react-router-dom';
+
 
 
 const Navbar = (auth, logout,) => {
@@ -9,7 +9,7 @@ const Navbar = (auth, logout,) => {
       <span>{auth.name}</span>
       
       <nav className='navbar '>
-       <Link to='/KarsList'>home</Link>
+       <a href='/KarsList'>home</a>
       
        <a href='/contact'>contact</a>
       </nav>

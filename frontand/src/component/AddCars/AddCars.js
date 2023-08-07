@@ -91,7 +91,7 @@ const AddCars = () => {
           onClick={()=>handleAdd({name, series,categories,image,model})}/>
         </div>
 
-
+<button>AddCars</button>
       </form>
     </section>
   

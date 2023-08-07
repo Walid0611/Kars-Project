@@ -1,66 +1,63 @@
-import React,{useEffect, useState} from 'react'
-import "./UpdateUser.css"
-import {UpdateUser,getUniqueUser} from '../../../api/UserListApi'
-import { useNavigate,useParams } from 'react-router';
-
-const UpdateUsers = () => {
-const [name,setName]=useState('')
-const [categories,setCategories]=useState('')
-const [series,setSeries]=useState(0)
-
-const navigate = useNavigate()
-const {id}=useParams()
-const handelUpdate=async(icon,values)=>{
-await UpdateUsers(icon,values)
-navigate('/list')
-}
-
-
-const getUniqueId=async(UserId)=>{
-const data = await getUniqueUser(UserId)
-console.log("data unique",data.getUniqueUser
-)
-setName(data.getUniqueUser.name)
-setSeries(data.getUniqueUser.series)
-setCategories(data.getUniqueUser.categories)
-
-
-}
-useEffect(()=>{
-if(id){getUniqueId(id)}
-},[id])
+import React from 'react'
+import './UpdateUser.css'
+const UpdateUser = () => {
   return (
-    <div> <div className='test'>
-    <form   id="login-form" class="login-form" autocomplete="off" >
-  <h1>Add contact Form</h1>
-  <div>
-    <label class="label-email">
-      <input type="email" class="text" name="email" placeholder="Name" tabindex="1" required  value={name} 
-      onChange={(e)=>setName(e.target.value)}   />
-      <span class="required">Name</span>
-    </label>
-  </div>
-  <div>
-    <label class="label-email">
-      <input type="text" class="text" name="categories" placeholder="categories" tabindex="1" required   value={categories} 
-      onChange={(e)=>setCategories(e.target.value)} />
-      <span class="required">categories</span>
-    </label>
-  </div>
+    <div>
+    
+    <section className="get-in-touch">
+      <h1 className="name">Update Kars</h1>
+      <form className="contact-form row">
+        <div className="form-field col-lg-6">
+          <input
+            id="name"
+            className="input-text js-input"
+            type="text"
+            required=""
+          />
+          <label className="label" htmlFor="name">
+            name
+          </label>
+        </div>
+        <div className="form-field col-lg-6 ">
+          <input
+            id="name"
+            className="input-text js-input"
+            type="text"
+            required=""
+          />
+          <label className="categories" htmlFor="email">
+            Categories
+          </label>
+        </div>
+        <div className="form-field col-lg-6 ">
+          <input
+            id="company"
+            className="input-text js-input"
+            type="text"
+            required=""
+          />
+          <label className="model" htmlFor="company">
+           model
+          </label>
+        </div>
+        <div className="form-field col-lg-6 ">
+          <input
+            id="phone"
+            className="input-text js-input"
+            type="text"
+            required=""
+          />
+          
+        </div>
+        
+        <div className="form-field col-lg-12">
+          <input className="submit-btn" type="submit" defaultValue="Submit" />
+          <button>UpdateKars</button>
+        </div>
+      </form>
+    </section>
   
-  <div>
-    <label class="label-password">
-      <input type="text" class="text" name="series" placeholder="series" tabindex="2" required  value={      <span class="required">series</span>
-} 
-      onChange={(e)=>setSeries(e.target.value)}  />
-      <span class="required">series</span>
-    </label>
   </div>
-  <div class="email">
-    <a><button onClick={()=>handelUpdate(id,{name,categories,series})} >Add New Kars</button></a>
-  </div>
-
-</form></div></div>
   )
 }
 

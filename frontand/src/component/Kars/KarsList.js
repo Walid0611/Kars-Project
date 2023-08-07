@@ -17,7 +17,7 @@ const KarsList = () => {
  
 const getAllKars =  async() => {
   const data=  await fetchAllCars()
-  console.log('Kassssssssssssssssrs:',data.allBookings)
+  console.log('Kars:',data.allBookings)
   dispatch(setKars(data.allBookings))
 
   }

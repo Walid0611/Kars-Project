@@ -1,12 +1,15 @@
 import React from 'react'
 import './KarsCard.css'
-// import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router'
 
-const KarsCard = ({mini,getAllKars}) => {
-
+const KarsCard = ({Kars,mini,getAllKars}) => {
 
 console.log('mini',mini)
 
+let navigate =useNavigate
+const navigateKars =()=>{
+navigate(`/update/${mini._id}`)
+}
 
 
   return (
@@ -15,6 +18,8 @@ console.log('mini',mini)
   <div className="background-texture" />
   <section className="carousel">
     <h2 className="categories__title">All KArs</h2>
+    <button onClick={()=>navigateKars()} >modify</button>
+    <button>X</button>
     
     <div className="carousel__container">
       <div className="carousel-item">

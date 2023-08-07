@@ -1,21 +1,21 @@
 import React from 'react'
-import ListUser from './../Admin/ListUsers/ListUser';
+import KarsList from '../Kars/KarsList'
+
 
 const ProfileUser = (auth) => {
+
+  const handleLogout=()=>{
+    auth.logout('/login')
+  }
   return (
     <div>
-    <div>
-      <h1>Profile</h1>
-      {auth && (
-        <div>
-          <p>ListUser: {auth.KarsList}</p>
-          {/* other details */}
-        </div>
-      )}
+    
+     <KarsList/>
+      <button onClick={handleLogout}>Logout</button>
     </div>
     
     
-    </div>
+   
   )
 }
 
