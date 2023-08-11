@@ -1,70 +1,50 @@
-import React from 'react'
-import './KarsCard.css'
-import {useNavigate} from 'react-router'
-import deleteUser from '../../api/UserListApi'
+import React from 'react';
+import './KarsCard.css';
+import { useNavigate } from 'react-router-dom';
 
-const KarsCard = ({mini,getAllKars}) => {
+const KarsCard = ({ mini, getAllKars }) => {
+  const navigate = useNavigate();
 
-console.log('mini',mini)
-
-let navigate =useNavigate
-const navigateKars =()=>{
-navigate(`/update/${mini._id}`)
-}
-
+  const navigateKars = () => {
+    navigate(`/update/${mini._id}`);
+  };
 
   return (
     <div className='bodyCardCards'>
-  <div className="background" />
-  <div className="background-texture" />
-  <section className="carousel">
-    <h2 className="categories__title">All KArs</h2>
-    <button onClick={()=>navigateKars()} >modify</button>
-    <button onClick={async()=>{await (mini._id); getAllKars()}}>X</button>
-    
-    <div className="carousel__container">
-      <div className="carousel-item">
-      <span>{mini.name}</span>
-        <img
-          className="carousel-item__img"
-          src={mini.image}
-          alt="cars"
-        />
-        
-        <div className="carousel-item__details">
-          <div className="controls">
-            <span className="fas fa-play-circle" />
-            <span className="fas fa-plus-circle" />
+      <div className="background" />
+      <div className="background-texture" />
+      <section className="carousel">
+        <div className="carousel__container">
+          <div className="carousel-item">
+            <span>{mini.name}</span>
+            <img
+              className="carousel-item__img"
+              src={mini.image}
+              alt="cars"
+            />
+            
+            <div className="carousel-item__details">
+              <div className="controls">
+                <span className="fas fa-play-circle" />
+                <span className="fas fa-plus-circle" />
+              </div>
+              <h5 className="carousel-item__details--title">{mini.categories}</h5>
+              <h6 className="carousel-item__details--subtitle">
+                {mini.model}
+              </h6>
+              <div className="buttons-container">
+                <button className="update-button" onClick={navigateKars}>Update Modification</button>
+                <button className="delete-button" onClick={async () => { await (mini._id); getAllKars(); }}>X</button>
+              </div>
+            </div>
+            
+            <button className="bn30" onClick={async () => { await getAllKars(); }}> </button>
           </div>
-          <h5 className="carousel-item__details--title">{mini.categories}</h5>
-          <h6 className="carousel-item__details--subtitle">
-            {mini.model}
-          </h6>
+          {/* ... */}
         </div>
-
-        <button className="bn30"  onClick={async()=>{ await getAllKars() }} > </button>
-      </div>
-      <div className="carousel-item">
-        
-        <div className="carousel-item__details">
-          <div className="controls">
-            <span className="fas fa-play-circle" />
-            <span className="fas fa-plus-circle" />
-          </div>
-          
-        </div>
-      </div>
-      
-      
-      
+      </section>
     </div>
-  </section>
-  </div>
+  );
+};
 
-    
-  
-    
-  )
-}
-
-export default KarsCard
+export default KarsCard;

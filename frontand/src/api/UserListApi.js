@@ -15,10 +15,10 @@ export const  deleteUser=async(id)=>{
 }
 
 //===> //http://localhost:3002/auth/UpdateKarrs
-export const  UpdateKarrs=async(id,values)=>{
-    const UpdateKarrs = await axios.put(`http://localhost:3002/auth/UpdateKarrs/${id},value`);
-
+export const UpdateKarrs = async (id, values) => {
+  const UpdateKarrs = await axios.put(`http://localhost:3002/auth/UpdateKarrs/${id}`, values);
 }
+
 
 export const  getUniqueUser=async(id,values)=>{
 const {data}= await axios.get(`http://localhost:3002/auth/getuser/${id}`,values)

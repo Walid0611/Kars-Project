@@ -8,7 +8,8 @@ import { Routes, Route } from 'react-router-dom';
 import ListUser from './component/Admin/ListUsers/ListUser';
 import AddCars from './component/AddCars/AddCars';
 import KarsList from './component/Kars/KarsList';
-import UpdateKars  from './component/Updatekars/UpdateKars';
+import UpdateKars from './component/Updatekars/UpdateKars';
+
 
 function App() {
   return (
@@ -27,10 +28,7 @@ function App() {
         <Route path='/listUser' element={<ListUser/>}/>
         <Route path='/Admin/AddCars' element={<AddCars/>}/>
         <Route path='/KarsList' element={<KarsList/>}/>
-        <Route path ='/UpdateKars/:id' element={<UpdateKars/>}/>
-
-
-
+        <Route path="/update/:id" element={<UpdateKars />} />
 
 
 
