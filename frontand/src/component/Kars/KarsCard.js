@@ -1,6 +1,7 @@
 import React from 'react';
 import './KarsCard.css';
 import { useNavigate } from 'react-router-dom';
+import { DeleteCar } from '../../api/AuthCars';
 
 const KarsCard = ({ mini, getAllKars }) => {
   const navigate = useNavigate();
@@ -8,6 +9,16 @@ const KarsCard = ({ mini, getAllKars }) => {
   const navigateKars = () => {
     navigate(`/update/${mini._id}`);
   };
+
+  const handleDelete = async () => {
+    try {
+      await DeleteCar(mini._id);
+      getAllKars(); // Fetch the updated car list
+    } catch (error) {
+      console.error('Error deleting car:', error);
+    }
+  };
+
 
   return (
     <div className='bodyCardCards'>
@@ -34,7 +45,7 @@ const KarsCard = ({ mini, getAllKars }) => {
               </h6>
               <div className="buttons-container">
                 <button className="update-button" onClick={navigateKars}>Update Modification</button>
-                <button className="delete-button" onClick={async () => { await (mini._id); getAllKars(); }}>X</button>
+                 <button className="delete-button" onClick={handleDelete}>X</button>
               </div>
             </div>
             

@@ -44,20 +44,20 @@ form {
 }
 
 .message,
-.signin {
+.sign-in {
     color: rgba(88, 87, 87, 0.822);
     font-size: 14px;
 }
 
-.signin {
+.sign-in {
     text-align: center;
 }
 
-.signin a {
+.sign-in a {
     color: royalblue;
 }
 
-.signin a:hover {
+.sign-in a:hover {
     text-decoration: underline royalblue;
 }
 

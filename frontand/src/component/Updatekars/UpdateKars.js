@@ -1,43 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import "./UpdateKars.css";
-import { UpdateKarrs, getUniqueUser } from '../../api/UserListApi';
+import { UpdateKarrs, getUniqueUser  } from '../../api/AuthCars';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const UpdateKars = () => {
-  
+
   const [name, setName] = useState('');
   const [categories, setCategories] = useState('');
   const [series, setSeries] = useState('');
+  const [model, setModel] = useState('');
 
 
-  
+
   const navigate = useNavigate();
   const { id } = useParams();
 
   const handelUpdate = async (idcon, values) => {
     await UpdateKarrs(idcon, values);
-    navigate('/list');
+    navigate('/KarsList');
   }
 
-  const getUniqueId = async (UserId) => {
-    const data = await getUniqueUser(UserId);
-    setName(data.name);
-    setSeries(data.series);
-    setCategories(data.categories);
-  }
 
-  useEffect(() => {
-    if (id) {
-      getUniqueId(id);
-    }
-  }, [id]);
-  
+ 
+
 
   return (
     <div>
       <div className='test'>
         <form id="login-form" className="login-form" autoComplete="off">
-          <h1>Add contact Form</h1>
+          <h1>updates contact Form</h1>
           <div>
             <label className="label-text">
               <input
@@ -68,8 +59,7 @@ const UpdateKars = () => {
               <span className="required">categories</span>
             </label>
           </div>
-
-          <div>
+<div>
             <label className="label-password">
               <input
                 type="text"
@@ -84,8 +74,23 @@ const UpdateKars = () => {
               <span className="required">series</span>
             </label>
           </div>
+          <div>
+            <label className="label-password">
+              <input
+                type="text"
+                className="text"
+                name="model"
+                placeholder="model"
+                tabIndex="2"
+                required
+                value={model}
+                onChange={(e) => setModel(e.target.value)}
+              />
+              <span className="required">series</span>
+            </label>
+          </div>
           <div className="email">
-            <button onClick={() => handelUpdate(id, { name, categories, series })}>Update New Kars</button>
+            <button type="button" onClick={() => handelUpdate(id, { name, categories, series ,model})}>Update New Kars</button>
 
           </div>
         </form>
