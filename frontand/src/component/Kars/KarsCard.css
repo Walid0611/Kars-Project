@@ -123,8 +123,8 @@
  }
 
  .carousel-item__details span {
-     width: 10px;
-	height: 10px;
+     width: 5px;
+	height: 5px;
      font-size: 0.9rem;
      color: #2ecc71;
      background-color: white;
@@ -137,27 +137,27 @@
  .carousel-item__details .carousel-item__details--title,
  .carousel-item__details--subtitle {
      color: #fff;
-     margin: 5px 0;
+     margin: 2px 0;
  }
  .carousel-item__details {
      /* ... other styles ... */
      display: flex;
      flex-direction: column;
      align-items: center;
-     padding: 10px;
+     padding: 2px;
      /* Add padding for spacing */
  }
 
  .buttons-container {
      display: flex;
      gap: 10px;
-     margin-top: 10px;
+     margin-top: 5px;
      /* Adjust margin as needed */
  }
 
  .update-button,
  .delete-button {
-     padding: 6px 10px;
+     padding: 10px 10px;
      background-color: #47ba43;
      color: white;
      border: none;
