@@ -5,7 +5,7 @@ const connectdb = require('./config/conecteddb')
 require ('dotenv').config()
 
 
-const port =  3002
+
 
 //import routes
 const userRoute = require('./routes/routeuser')
@@ -22,7 +22,12 @@ app.use('/auth',userRoute)
 
 app.use ('/booking',BookingRouter)
 
+app.use((req,res)=>{
+    res.send("API is running...")
+    
+    })
 
+    const port =  process.env.PORT || 3002
 
 app.listen(port,err=>{
     err?console.log(err):console.log('go port${port}')
